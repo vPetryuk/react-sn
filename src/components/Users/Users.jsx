@@ -21,10 +21,14 @@ return <div>
 
 { 
     props.users.map(u => <div key={u.id}>
+        
         <span> 
+          
             <NavLink to={'/profile/' + u.id}>
             <div>
-                <img src={u.photos.bigphoto !=null ? u.photos.bigphoto : avatar} className={styles.userPhoto} alt=""/>
+               
+               {u.photos !=null ? <img src={u.photos.bigphoto !=null ? u.photos.bigphoto : avatar} className={styles.userPhoto} alt=""/> : <img src={avatar} className={styles.userPhoto} alt=""/>} 
+                    
             </div>
             </NavLink>
             <div>
