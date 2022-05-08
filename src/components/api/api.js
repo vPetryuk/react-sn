@@ -11,6 +11,7 @@ const instance = axios.create({
 export const usersAPI ={
 
     getUsers(currentPage = 1){
+        debugger
         return instance.get(`GCuser?page=${currentPage}`,{
         }).then(response => {
             debugger

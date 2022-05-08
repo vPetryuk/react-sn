@@ -1,12 +1,12 @@
 import { usersAPI } from "../components/api/api";
 
-const FOLLOW = 'FOLLOW';
-const UNFOLLOW = 'UNFOLLOW';
-const SET_USERS = 'SET_USERS';
-const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
-const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT';
-const SET_FETCHING = 'SET_FETCHING'
-const SET_IS_FOLLOWING_PROGRESS = 'SET_IS_FOLLOWING_PROGRESS'
+const FOLLOW = '/user/FOLLOW';
+const UNFOLLOW = '/user/UNFOLLOW';
+const SET_USERS = '/user/SET_USERS';
+const SET_CURRENT_PAGE = '/user/SET_CURRENT_PAGE';
+const SET_TOTAL_USERS_COUNT = '/user/SET_TOTAL_USERS_COUNT';
+const SET_FETCHING = '/user/SET_FETCHING'
+const SET_IS_FOLLOWING_PROGRESS = '/user/SET_IS_FOLLOWING_PROGRESS'
 
 
 let initialState = {
@@ -74,7 +74,7 @@ export const setCurrentPage= (currentPage) => ({type: SET_CURRENT_PAGE, currentP
 export const setFetching = (isFetching) => ({type: SET_FETCHING, isFetching })
 export const setIsFollowingProgress = (isFetching) => ({type: SET_IS_FOLLOWING_PROGRESS, isFetching})
 
-export const getUsers = (currentPage) => {
+export const requestUsers = (currentPage) => {
     return(dispatch) =>{
     dispatch(setFetching(true));
     dispatch(setCurrentPage(currentPage))    
